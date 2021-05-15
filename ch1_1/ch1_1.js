@@ -4,15 +4,19 @@ Implement an algorithm to determine if a string has all unique characters.
 What if you cannot use additional data structures?
 */
 
-var s = "aaaaaa"
 
-//console.log(s.length)
+function isStringUnique(word) {
+    var map = {}
 
-for (i in s) {
-    if (s[i] != s[0]) {
-        console.log(false)
-        return
+    for (i in word) {
+        if(map[word[i]])
+        {
+            return false
+        }
+        map[word[i]] = i
     }
+    return true
 }
-console.log(true)
-return
+
+
+console.log(isStringUnique("help"))
