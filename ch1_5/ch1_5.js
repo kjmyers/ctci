@@ -12,12 +12,12 @@ function oneAway(string1, string2) {
 
     var errorCount = 0
     
-    if(string1.length - string2.length > 1) {
-        return false
-    }
-    else if(string1.length - string2.length == 1) {
-        errorCount++
-    }
+    // if(string1.length - string2.length > 1) {
+    //     return false
+    // }
+    // else if(string1.length - string2.length == 1) {
+    //     errorCount++
+    // }
 
     if(string2 > string1) {
         longer = string2
@@ -30,7 +30,7 @@ function oneAway(string1, string2) {
 
     for(letter in longer) {
         console.log(longer[letter])
-        if(longer[letter] != shorter[letter]) {
+        if(longer[letter] != shorter[Number(letter) + errorCount]) {
             errorCount++
             if(errorCount > 1) {
                 return false
@@ -43,7 +43,7 @@ function oneAway(string1, string2) {
 }
 
 
-string1 = "This is a mone"
-string2 = "This is a line"
+string1 = 'This is a line'
+string2 = 'This is a line'
 
 console.log(oneAway(string1, string2))
